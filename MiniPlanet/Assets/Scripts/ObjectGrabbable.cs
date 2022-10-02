@@ -6,7 +6,7 @@ public class ObjectGrabbable : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
-    private object objectRigidBody;
+    private Object objectRigidBody;
 
     // Update is called once per frame
     private void Awake()
