@@ -1,5 +1,6 @@
     using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Xml;
 using UnityEngine;
 
@@ -21,8 +22,10 @@ public class SeedPlanter : MonoBehaviour
         {
 
             Destroy(Seed);
-            Destroy(Planter);
-            Instantiate(PlantedSeed, dirt.position, dirt.rotation);
+            Planter.SetActive(false);
+            PlantedSeed.SetActive(true);
+
+            //Instantiate(PlantedSeed, dirt.position, dirt.rotation);
         }
     }
 }
