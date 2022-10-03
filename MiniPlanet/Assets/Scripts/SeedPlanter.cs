@@ -9,7 +9,7 @@ public class SeedPlanter : MonoBehaviour
     [SerializeField] GameObject Seed;
     [SerializeField] GameObject Planter;
     [SerializeField] GameObject PlantedSeed;
-    [SerializeField] Transform dirt;
+    //[SerializeField] Transform dirt;
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +18,9 @@ public class SeedPlanter : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Planter")
+        
+
+        if (collision.gameObject.tag == "Planter")
         {
 
             Destroy(Seed);

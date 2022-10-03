@@ -4,6 +4,7 @@ using UnityEngine;
 public class FirstPersonMovement : MonoBehaviour
 {
     public float speed = 5;
+    public ParticleSystem particles;
 
     [Header("Running")]
     public bool canRun = true;
@@ -40,5 +41,17 @@ public class FirstPersonMovement : MonoBehaviour
 
         // Apply movement.
         rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            particles.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            particles.Stop();
+        }
     }
 }

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2423393527233053200
 Transform:
   m_ObjectHideFlags: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693fcd0bf5fd3f54e83a03628d55a55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThePlayer: {fileID: 0}
-  Fadescreen: {fileID: 0}
+  PlantedPlanter: {fileID: 0}
+  UnplantedPlanter: {fileID: 0}
 --- !u!1 &4058239196351843693
 GameObject:
   m_ObjectHideFlags: 0
