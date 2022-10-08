@@ -1,5 +1,6 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,38 +16,56 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public GameObject prefabToPlant;
 
+        public GameObject PlantedSeed;
 
-        private void OnEnable()
-        {
-            if (hand == null)
-                hand = this.GetComponent<Hand>();
+        public GameObject NextStage;
 
-            if (plantAction == null)
-            {
-                Debug.LogError("<b>[SteamVR Interaction]</b> No plant action assigned", this);
-                return;
-            }
+        public GameObject HandCollider;
+   
 
-            plantAction.AddOnChangeListener(OnPlantActionChange, hand.handType);
-        }
+       // public bool isbed = false;
 
-        private void OnDisable()
-        {
-            if (plantAction != null)
-                plantAction.RemoveOnChangeListener(OnPlantActionChange, hand.handType);
-        }
+        Collider myCollider;
 
-        private void OnPlantActionChange(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources inputSource, bool newValue)
-        {
-            if (newValue)
-            {
-                Plant();
-            }
-        }
+
+
+
+        //private void OnEnable()
+        //{
+        //    if (hand == null)
+        //        hand = this.GetComponent<Hand>();
+
+        //    if (plantAction == null)
+        //    {
+        //        Debug.LogError("<b>[SteamVR Interaction]</b> No plant action assigned", this);
+        //        return;
+        //    }
+
+        //    plantAction.AddOnChangeListener(OnPlantActionChange, hand.handType);
+        //}
+
+        //private void OnDisable()
+        //{
+        //    if (plantAction != null)
+        //        plantAction.RemoveOnChangeListener(OnPlantActionChange, hand.handType);
+        //}
+
+        ////private void OnPlantActionChange(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources inputSource, bool newValue)
+        ////{
+        ////    if (newValue)
+        ////    {
+        ////        Plant();
+        ////    }
+        ////}
+
 
         public void Plant()
         {
-            StartCoroutine(DoPlant());
+                
+                Debug.Log("We hit an obstacle");
+                PlantedSeed.SetActive(false);
+                NextStage.SetActive(true);
+            
         }
 
         private IEnumerator DoPlant()
@@ -67,9 +86,9 @@ namespace Valve.VR.InteractionSystem.Sample
 
             GameObject planting = GameObject.Instantiate<GameObject>(prefabToPlant);
             planting.transform.position = plantPosition;
-            planting.transform.rotation = Quaternion.Euler(0, Random.value * 360f, 0);
+            planting.transform.rotation = Quaternion.Euler(0, UnityEngine.Random.value * 360f, 0);
 
-            planting.GetComponentInChildren<MeshRenderer>().material.SetColor("_TintColor", Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+            planting.GetComponentInChildren<MeshRenderer>().material.SetColor("_TintColor",UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
 
             Rigidbody rigidbody = planting.GetComponent<Rigidbody>();
             if (rigidbody != null)
@@ -78,7 +97,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
 
             Vector3 initialScale = Vector3.one * 0.01f;
-            Vector3 targetScale = Vector3.one * (1 + (Random.value * 0.25f));
+            Vector3 targetScale = Vector3.one * (1 + (UnityEngine.Random.value * 0.25f));
 
             float startTime = Time.time;
             float overTime = 0.5f;
