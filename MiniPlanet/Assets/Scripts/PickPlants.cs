@@ -19,5 +19,4 @@ public class PickPlants : MonoBehaviour, IInteractable
         PlantedPlanter.SetActive(false);
         UnplantedPlanter.SetActive(true);
     }
-
 }

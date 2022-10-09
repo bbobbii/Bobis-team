@@ -7,6 +7,9 @@ TagManager:
   - Planter
   - PlantedCrop
   - Bed
+  - SeedOne
+  - SeedTwo
+  - SeedThree
   layers:
   - Default
   - TransparentFX

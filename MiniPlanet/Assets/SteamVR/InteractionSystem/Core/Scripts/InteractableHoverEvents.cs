@@ -15,15 +15,17 @@ namespace Valve.VR.InteractionSystem
 	public class InteractableHoverEvents : MonoBehaviour
 	{
 		public SteamVR_Action_Boolean clickInteract;
-		public MeshFilter garden;
+		public MeshFilter[] garden;
         //public Mesh growingGarden;
 		//public Mesh moreGrown;
 		public Mesh[] Garden;
+
 
         public UnityEvent onHandHoverBegin;
 		public UnityEvent onHandHoverEnd;
 		public UnityEvent onAttachedToHand;
 		public UnityEvent onDetachedFromHand;
+
 
 		public bool isHover = false;
 
@@ -32,16 +34,32 @@ namespace Valve.VR.InteractionSystem
 		public bool waterd = true;
 
 
+		//public void Start()
+		//{
+		//	PlantedSeeds gardennn = garden[0].GetComponent<PlantedSeeds>();
+		//}
+
 		public void Update()
 		{
 			if (clickInteract.stateDown && isHover == true)
 			{
-				garden.mesh = Garden[0];
-                onAttachedToHand.Invoke();
+
+				//change the first garden into something else depending on a component on that garden
+				if (garden[0].GetComponent<BoxCollider>() == true) 
+				{ 
+					garden[0].mesh = Garden[0];
+					//onAttachedToHand.Invoke();
+				}
+
+                //change the second garden into something else depending on a component on that garden
+                if (garden[1].GetComponent<BoxCollider>() == true)
+                {
+                    garden[1].mesh = Garden[0];
+                }
 
                 if (isGrown == true && waterd == true)
                 {
-                    garden.mesh = Garden[1];
+					garden[0].mesh = Garden[1];
                 }
             }
 

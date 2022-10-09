@@ -21,8 +21,8 @@ namespace Valve.VR.InteractionSystem.Sample
         public GameObject NextStage;
 
         public GameObject HandCollider;
-   
 
+        
        // public bool isbed = false;
 
         Collider myCollider;
