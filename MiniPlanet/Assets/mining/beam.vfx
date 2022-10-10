@@ -285,7 +285,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 6
+      m_SerializableObject: 9
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -917,7 +917,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.6903402805328369,"g":0.008147991262376309,"b":1.727370023727417,"a":1.0}'
+      m_SerializableObject: '{"r":0.055298686027526858,"g":0.0,"b":0.9659316539764404,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: _Color
@@ -2732,7 +2732,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.425
+      m_SerializableObject: 0.794
     m_Space: 2147483647
   m_Property:
     name: _DistorsionAmount
@@ -3089,7 +3089,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 3
+      m_SerializableObject: 6
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -4373,7 +4373,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 4
     m_Space: 2147483647
   m_Property:
     name: Size
