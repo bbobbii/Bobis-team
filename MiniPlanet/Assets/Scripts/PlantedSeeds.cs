@@ -2,43 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Valve.VR.InteractionSystem;
 
-
-    public class PlantedSeeds : MonoBehaviour
+public class PlantedSeeds : MonoBehaviour
     {
 
         public bool type1 = false;
         public bool type2 = false;
         public bool type3 = false;
 
+
+        public GameObject[] EmptyPlanter;
+
+        public GameObject[] PlantedPlanter;
+
+    public void Start()
+    {
+        //EmptyRenderer.GetComponent<Renderer>().materials[0] = textures[0]; 
+            //.materials[0].materials = textures[0];
+    }
+
+
     public void OnCollisionStay(Collision collision)
         {
-            Debug.Log("it did hit");
+
             if (collision.gameObject.tag == "SeedOne")
             {
-                type1 = true;
 
-                type2 = false;
-
-                type3 = false;
+                if (type2 == false && type3 == false)
+                {
+                    type1 = true;
+                    DestroySeed();
+                    PlantedPlanter[0].GetComponent<MeshRenderer>().enabled = true;
+                    //Debug.Log("it did hit");
+                }
             }
             else
             if(collision.gameObject.tag == "SeedTwo")
             {
-                type2 = true;
 
-                type1 = false;
-
-                type3 = false;
+                if (type1 == false && type3 == false)
+                {
+                    type2 = true;
+                    DestroySeed();
+                }
             }
             else
-                 if (collision.gameObject.tag == "SeedThree")
+            if (collision.gameObject.tag == "SeedThree")
             {
-            type3 = true;
 
-            type2 = false;
+                if (type1 == false && type2 == false)
+                {
+                    type3 = true;
+                    DestroySeed();
+                }
 
-            type1 = false;
         }
+
+            void DestroySeed() 
+            {
+            Destroy(collision.gameObject);
+            }
     }
 }

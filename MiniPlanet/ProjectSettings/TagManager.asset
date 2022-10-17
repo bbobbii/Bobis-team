@@ -10,6 +10,8 @@ TagManager:
   - SeedOne
   - SeedTwo
   - SeedThree
+  - Lettuce
+  - Crop
   layers:
   - Default
   - TransparentFX

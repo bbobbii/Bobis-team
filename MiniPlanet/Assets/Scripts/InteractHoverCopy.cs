@@ -15,10 +15,10 @@ namespace Valve.VR.InteractionSystem
     public class InteractHoverCopy : MonoBehaviour
     {
         public SteamVR_Action_Boolean clickInteract;
-        public MeshFilter[] garden;
-        //public Mesh growingGarden;
-        //public Mesh moreGrown;
-        public Mesh[] Garden;
+
+        public GameObject[] PlantedPlanter;
+        public GameObject[] GrownPlanter;
+        public Transform[] PlanterSpots;
 
 
         public UnityEvent onHandHoverBegin;
@@ -34,40 +34,55 @@ namespace Valve.VR.InteractionSystem
         public bool waterd = true;
 
 
-        //public void Start()
-        //{
-        //	PlantedSeeds gardennn = garden[0].GetComponent<PlantedSeeds>();
-        //}
-
         public void Update()
         {
             if (clickInteract.stateDown && isHover == true)
             {
 
                 //change the first garden into something else depending on a component on that garden
-                if (garden[0].GetComponent<PlantedSeeds>().type1 == true)
+                if (PlantedPlanter[0].GetComponent<PlantedSeeds>().type1 == true)
                 {
-                    garden[0].mesh = Garden[0];
+                    PlantedPlanter[0].GetComponent<MeshRenderer>().enabled = false;
+                    Instantiate(GrownPlanter[0], PlanterSpots[0]);
+                    PlantedPlanter[0].GetComponent<PlantedSeeds>().type1 = false;
+                    //GrownPlanter[0].SetActive(true); //!!!!! change with instantiate prefab with pickupable crop!!!!!
                     //onAttachedToHand.Invoke();
                 }
-                else
-                if(garden[0].GetComponent<PlantedSeeds>().type2 == true)
-                {
-                    garden[0].mesh = Garden[1];
-                }
+                //else
+                //if(garden[0].GetComponent<PlantedSeeds>().type2 == true)
+                //{
+                //    garden[0].mesh = Garden[1];
+                //}
+                //else
+                //if (garden[0].GetComponent<PlantedSeeds>().type3 == true)
+                //{
+                //    garden[0].mesh = Garden[2];
+                //}
 
-                //change the second garden into something else depending on a component on that garden
-                if (garden[1].GetComponent<BoxCollider>() == true)
-                {
-                    garden[1].mesh = Garden[0];
-                }
 
-                if (isGrown == true && waterd == true)
-                {
-                    garden[0].mesh = Garden[1];
-                }
+                ////change the second garden into something else depending on a component on that garden
+                //if (garden[1].GetComponent<PlantedSeeds>().type1 == true)
+                //{
+                //    garden[1].mesh = Garden[0];
+                //}
+                //else
+                //if (garden[1].GetComponent<PlantedSeeds>().type2 == true)
+                //{
+                //    garden[1].mesh = Garden[1];
+                //}
+                //else
+                //if (garden[1].GetComponent<PlantedSeeds>().type3 == true)
+                //{
+                //    garden[1].mesh = Garden[2];
+                //}
+
+
+
+                //if (isGrown == true && waterd == true)
+                //{
+                //    garden[0].mesh = Garden[1];
+                //}
             }
-
         }
 
         //-------------------------------------------------

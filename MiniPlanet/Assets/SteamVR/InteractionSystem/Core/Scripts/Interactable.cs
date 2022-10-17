@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 
 namespace Valve.VR.InteractionSystem
 {
