@@ -7,6 +7,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using System.Security.Principal;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -34,11 +35,25 @@ namespace Valve.VR.InteractionSystem
         public bool waterd = true;
 
 
+        public GameObject FadeScreen;
+        public bool fadeOnStart = true;
+        public float fadeDuration = 2;
+        public Color fadeColor;
+        private Renderer rend;
+
+
+        public void Start()
+        {
+            rend = FadeScreen.GetComponent<Renderer>();
+            if (fadeOnStart)
+            FadeIn();
+        }
+
         public void Update()
         {
             if (clickInteract.stateDown && isHover == true)
             {
-
+                StartCoroutine(FadeInandOut());
                 //change the first garden into something else depending on a component on that garden
                 if (PlantedPlanter[0].GetComponent<PlantedSeeds>().type1 == true)
                 {
@@ -112,6 +127,48 @@ namespace Valve.VR.InteractionSystem
         private void OnDetachedFromHand(Hand hand)
         {
             onDetachedFromHand.Invoke();
+        }
+
+
+        public void FadeIn()
+        {
+            Fade(1, 0);
+        }
+        public void FadeOut()
+        {
+            Fade(0, 1);
+        }
+
+
+        public void Fade(float alphaIn, float alphaOut)
+        {
+            StartCoroutine (FadeRoutine(alphaIn, alphaOut));
+        }
+
+
+        public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
+        {
+            float timer = 0;
+            while(timer <= fadeDuration)
+            {
+                Color newColor = fadeColor;
+                newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
+
+                rend.material.SetColor("_BaseColor", newColor);
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            Color newColor2 = fadeColor;
+            newColor2.a = alphaOut;
+            rend.material.SetColor("_BaseColor", newColor2);
+        }
+
+        public IEnumerator FadeInandOut()
+        {
+            FadeOut();
+            yield return new WaitForSeconds(4);
+            FadeIn();
         }
     }
 }

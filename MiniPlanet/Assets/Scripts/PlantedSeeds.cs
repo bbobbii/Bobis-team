@@ -45,6 +45,7 @@ public class PlantedSeeds : MonoBehaviour
                 {
                     type2 = true;
                     DestroySeed();
+                    PlantedPlanter[1].GetComponent<MeshRenderer>().enabled = true;
                 }
             }
             else
@@ -55,9 +56,10 @@ public class PlantedSeeds : MonoBehaviour
                 {
                     type3 = true;
                     DestroySeed();
+                    PlantedPlanter[2].GetComponent<MeshRenderer>().enabled = true;
                 }
 
-        }
+            }
 
             void DestroySeed() 
             {
