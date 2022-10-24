@@ -39,4 +39,9 @@ public class pewpew : MonoBehaviour
             }
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(Cam.transform.position, Cam.transform.position + Cam.transform.forward * 10);
+    }
 }
