@@ -637,11 +637,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: d4011ef9-51ee-4e25-a732-81e7dec9081c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: GizmosPlsWork
+  organizationId: shivarem
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

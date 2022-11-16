@@ -105583,8 +105583,10 @@ GameObject:
   - component: {fileID: 1068245362}
   - component: {fileID: 1068245364}
   - component: {fileID: 1068245363}
-  - component: {fileID: 1068245365}
-  m_Layer: 0
+  - component: {fileID: 1068245366}
+  - component: {fileID: 1068245368}
+  - component: {fileID: 1068245367}
+  m_Layer: 7
   m_Name: OverBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143027,8 +143029,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &1068245365
-TilemapCollider2D:
+--- !u!61 &1068245366
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143036,14 +143038,75 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1068245361}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 67192c24fe678e4438173761a98d3df6, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: -0.07999992, y: -4.8035154}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 26.72, y: 0.31926584}
+  m_EdgeRadius: 0
+--- !u!61 &1068245367
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068245361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.4414213, y: 2.3954601}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0801396, y: 5.10314}
+  m_EdgeRadius: 0
+--- !u!61 &1068245368
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068245361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.994824, y: -1.7452345}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2172022, y: 3.1796703}
+  m_EdgeRadius: 0
 --- !u!1 &1249788853
 GameObject:
   m_ObjectHideFlags: 0
@@ -143165,7 +143228,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.058920473, y: -0.0317138}
+  m_Offset: {x: -0.058920473, y: -0.03207022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143176,7 +143239,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44209027, y: 0.6404879}
+  m_Size: {x: 0.44209027, y: 0.6412008}
   m_EdgeRadius: 0
 --- !u!212 &1823304682
 SpriteRenderer:
@@ -143238,7 +143301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823304679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.18, y: -4.52, z: 0}
+  m_LocalPosition: {x: -10.751, y: -4.495, z: 0}
   m_LocalScale: {x: 0.29950476, y: 0.29950476, z: 0.29950476}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -145733,7 +145796,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.61215854
+  orthographic size: 0.90639377
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -145809,7 +145872,7 @@ GameObject:
   - component: {fileID: 2129974823}
   - component: {fileID: 2129974825}
   m_Layer: 0
-  m_Name: Ghoul Sprite Sheet 62 x 33_2
+  m_Name: Ghoul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
